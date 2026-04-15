@@ -46,6 +46,7 @@ app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/settings', settingsRoutes);
 app.use('/api/whatsapp', whatsappRoutes);
 
+app.get('/', (req, res) => res.json({ status: 'ok', message: 'Agendamento API', version: '1.0.0' }));
 app.get('/api/health', (req, res) => res.json({ status: 'ok', ts: new Date().toISOString() }));
 
 // Global error handler — never leak stack traces to clients
